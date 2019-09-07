@@ -18,7 +18,7 @@
 	 		  	<p class="lead">{{this.burgerName}}</p>
 	 		  	<span class="input-group-btn">
 
-	 		  		<form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+	 		  		<form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
 	 		  			<input type="hidden" name="devoured" value="true">
 	 		  			<button class="btn btn-default btn-lg" type="submit">Devour it!</button>
 	 		  		</form>
@@ -53,11 +53,11 @@
 	<div class="col-md-10 col-md-offset-1">
 	
 		
-		<form class="create-update-form" action="burgers/create" method="POST">
+		<form class="create-update-form" action="/api/burgers" method="POST">
 		 <div class="form-group">
-		 	<textarea class="form-control input-lg" type="text" name="burgerName" row="3" placeholder="Input Burger Name"></textarea>
+		 	<textarea class="form-control input-lg" type="text" name="burgerName" row="3" placeholder="Input Burger Name" id="newBurgerName"></textarea>
 		 </div>
-		 <button class="btn btn-default btn-lg" type="submit">Submit New Burger</button>
+		 <button class="btn btn-default btn-lg" type="submit" id="#submitBurger">Submit New Burger</button>
 		</form>
 	</div>
 

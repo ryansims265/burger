@@ -28,8 +28,7 @@ $(function() {
       console.log("Creating Burger");
   
       var newBurger = {
-        burgerName: $("#ca").val().trim(),
-        devoured: $("[burgerName=devoured]:checked").val().trim()
+        burgerName: $("#newBurgerName").val().trim()
       };
   
       // Send the POST request.
@@ -40,7 +39,8 @@ $(function() {
         function() {
           console.log("created new burger");
           // Reload the page to get the updated list
-          location.reload();
+          // location.reload();
+        //   res.redirect("/burgers");
         }
       );
     });
