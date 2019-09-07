@@ -1,10 +1,3 @@
-//Create a select all method 
-//Create an insert one method 
-//Create a updated one method 
-
-//Export module using the module.exports 
-
-
 // Import MySQL connection.
 var connection = require("../config/connection.js");
 
@@ -95,20 +88,9 @@ var orm = {
       cb(result);
     });
   },
-  delete: function(table, condition, cb) {
-    var queryString = "DELETE FROM " + table;
-    queryString += " WHERE ";
-    queryString += condition;
 
-    connection.query(queryString, function(err, result) {
-      if (err) {
-        throw err;
-      }
-
-      cb(result);
-    });
-  }
 };
+
 
 // Export the orm object for the model 
 module.exports = orm;

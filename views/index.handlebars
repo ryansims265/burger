@@ -18,9 +18,9 @@
 	 		  	<p class="lead">{{this.burgerName}}</p>
 	 		  	<span class="input-group-btn">
 
-	 		  		<form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
+	 		  		<form action="/api/burgers/{{this.id}}?_method=PUT" method="PUT">
 	 		  			<input type="hidden" name="devoured" value="true">
-	 		  			<button class="btn btn-default btn-lg" type="submit">Devour it!</button>
+	 		  			<button class="btn btn-default btn-lg" type="submit" id="change-devoured">Devour it!</button>
 	 		  		</form>
 	 		  	</span>
 	 		  </div>
