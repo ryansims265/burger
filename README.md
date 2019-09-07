@@ -12,4 +12,4 @@ Feel free to eat as many Good Burgers as you can!
 
 Express, Handlebars, MySQL, API routes, Bootstrap, JQuery, and NPM was used to create this application! 
 
-Check it out on Heroku: 
+Check it out on Heroku: https://aqueous-anchorage-43398.herokuapp.com/
