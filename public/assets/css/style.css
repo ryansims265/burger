@@ -1,0 +1,22 @@
+#burgerlist {
+    background-color: yellow;
+}
+
+li {
+    list-style-type: none;
+}
+
+body{
+	background-color: #008080;
+	text-align: center;
+}
+
+.jumbotron{
+	background-color: #008080;
+	color: #f06824;
+}
+
+h1{
+	color: black;
+	font-size: 20px;
+}

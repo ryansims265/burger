@@ -1,38 +1,65 @@
-<h1>Burger Time!</h1>
+<div class="container">
+	<div class="jumbotron">
+		<img src="https://images.squarespace-cdn.com/content/v1/5cff37a530044b00010dd11f/1560285112770-6WJPKMERDKMDM7W45MII/ke17ZwdGBToddI8pDm48kCDPAJanA_hv8UFutyc75NNZw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7Rb66VC8y5UmDKESC3gpGyVvRDKpG4p_QGYclqeuNWRXtom1-N_eYES5jCWHm-XKpQ/good-burger-logo-3.png" width="auto" height="auto">
+		<h2>Welcome to Good Burger, Home of the Good Burger, Can I take your Order?</h2>
+	</div>
+	
 
-<h2>Here are the burgers!</h2>
+	<div class="row">
 
-<ul>
-  {{#each burgers}}
-    {{#unless sleepy}}
-      {{> burgers/burger-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+	<div class="col-md-4 col-md-offset-1">
+	 <div class="panel-panel default">
+	 	<h1>Ready to Eat Good Burgers</h1>
+	 	<ul class="list-group">
+	 		{{#each burgers}}
+	 		 {{#unless this.devoured}}
+	 		 <li class="list-group-item">
+	 		  <div class="input-group">
+	 		  	<p class="lead">{{this.burgerName}}</p>
+	 		  	<span class="input-group-btn">
 
-<h2>Burgers are Great!</h2>
+	 		  		<form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+	 		  			<input type="hidden" name="devoured" value="true">
+	 		  			<button class="btn btn-default btn-lg" type="submit">Devour it!</button>
+	 		  		</form>
+	 		  	</span>
+	 		  </div>
+	 		 </li>
+	 		 {{/unless}}
+	 		{{/each}}
+	 	</ul>
 
-<ul>
-  {{#each burgers}}
-    {{#if sleepy}}
-      {{> burgers/burger-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+	 </div>
+	</div>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+	
+	<div class="row">
+		<div class="col-md-4 col-md-offset-2">
+			<h1>Devoured Good Burgers</h1>
+			<div class="panel panel-default">
+				<ul class="list-group">
+					{{#each burgers}}
+					 {{#if this.devoured}}
+					 <li class="list-group-item">
+					 	<p class="lead">{{this.burgerName}}</p>
+					 </li>
+					 {{/if}}
+					  {{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
 
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="burgeName" name="name">
-  </div>
+	<div class="col-md-10 col-md-offset-1">
+	
+		
+		<form class="create-update-form" action="burgers/create" method="POST">
+		 <div class="form-group">
+		 	<textarea class="form-control input-lg" type="text" name="burgerName" row="3" placeholder="Input Burger Name"></textarea>
+		 </div>
+		 <button class="btn btn-default btn-lg" type="submit">Submit New Burger</button>
+		</form>
+	</div>
 
-  <div class="form-group">
-    <label for="sleepy">Eaten?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+ </div>
+</div>
